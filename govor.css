@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    background: blue;
+    margin-left: 150px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Arial;
+}
+.polje {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    font-family: Arial;
+    outline: none;
+}
+.naslov {
+    height: 10%;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.podnaslov {
+    height: 27%;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+.tekst {
+    height: 60%;
+    font-size: 0.8em;
+}
+.container2 {
+    display: inline-block;
+    width: 30%;
+    height: 70%;
+    border: 2px solid black;
+    padding: 5px;
+}
+button {
+    width: 3%;
+    height: 7%;
+    margin: 1%;
+    font-size: 2em;
+    font-weight: bolder;
+}
+.klik:hover {
+    cursor: pointer;
+}
+.ceoTekst {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    text-align: left;
+}
