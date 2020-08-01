@@ -3,16 +3,28 @@ const polje = document.querySelectorAll('.polje');
 const ceoTekst = document.querySelector('.ceoTekst');
 const klik = document.querySelector('.klik');
 const selekcija = document.querySelector('.selekcija');
-klik.addEventListener('click', kopiraj);
-selekcija.addEventListener('click', uzmiSelTekst);
+const select = document.querySelector('.select');
+select.addEventListener('change', () => {
+    polje[1].style.fontSize = select.value;
+    polje[1].focus();
+});
+/* klik.addEventListener('click', kopiraj); */
+/* selekcija.addEventListener('click', uzmiSelTekst); */
 
 let reg = /background|color|height/i;
 
 const govor = new webkitSpeechRecognition || new SpeechRecognition();
 govor.lang = 'sr-RS-cyrl';
-govor.interimResults = false;
+govor.interimResults = true;
+
+
 govor.addEventListener('result', (e) => {
-    let words = event.results[0][0].transcript;
+    container.style.background = '#b22e2e';
+    if(e.results[0].isFinal === false) {
+        container.style.background = '#34ff14';
+        return;
+    }
+    let words = e.results[0][0].transcript;
     if(words == 'sve ponovo komanda'){
         document.activeElement.value = ''; 
         return;
