@@ -1,7 +1,8 @@
 fetch("https://search-maps.yandex.ru/v1/?apikey=307add21-ae3f-4d48-a05c-8770fb06f56b&text=Saint Petersburg&lang=uk_UA ")
 .then(response => {
-	console.log(response);
+	return response.json();
 })
+.then(prom => console.log(prom))
 .catch(err => {
 	console.log(err);
 });
